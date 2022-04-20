@@ -2,15 +2,25 @@
 
 {% block title %}{{ post.title }}{% endblock %}
 
-{% block titleh %}{{ post.title }}{% endblock %}
+{% block titleheader %}{{ post.title }}{% endblock %}
+
+{% block imagebg %}<header class="masthead" style="background-image: url('{{ post.image }}')">{% endblock %}
+
+{# {% block subtitleheader %}Test de sous-titre{% endblock %} #}
 
 {% block body %}
+        {# {{ dump(post) }} #}
         <!-- Post Content-->
         <article class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7 post-content">
+                        {{ post.content | raw }}
+                    </div>
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>{{ post.content }}</p>
+                        Rédigé par {{ post.user.email }}
+                        - Publié {{ post.createdAt | ago }}
+                        - Classé dans {{ post.category.name }}
                     </div>
                 </div>
             </div>

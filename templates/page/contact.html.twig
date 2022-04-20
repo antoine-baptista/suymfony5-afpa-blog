@@ -1,8 +1,12 @@
 {% extends 'clean.html.twig' %}
 
-{% block title %}Pour nous contacter{% endblock %}
+{% block title %}Pour nous contacter!{% endblock %}
 
-{% block titleh %}Pour nous contacter{% endblock %}
+{% block titleheader %}Contactez-nous!{% endblock %}
+
+{% block subtitleheader %}N'hésitez pas .. décrochez ☎️ !!{% endblock %}
+
+{% block imagebg %}<header class="masthead" style="background-image: url('{{ asset('clean/assets/img/contact-bg.jpg') }}')">{% endblock %}
 
 {% block body %}
         <!-- Main Content-->
@@ -60,7 +64,8 @@
                                 <!-- an error submitting the form-->
                                 <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                 <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
+                                {# <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button> #}
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Send</button>
                             </form>
                         </div>
                     </div>
